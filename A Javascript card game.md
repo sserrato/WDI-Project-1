@@ -10,7 +10,7 @@
 * user clicks a button to be dealt another cards
 * user clicks a button to end turn and enable dealer to play to either 17 or a 21
 
-![](/WDI-Project-1/Project1Game/GameProject.png)
+![](https://github.com/sserrato/WDI-Project-1/blob/master/Project1Game/GameProject.png)
 ### User Stories
 ![](/WDI-Project-1/Project1Game/Userstories.png)
 ### Problems to be solved
