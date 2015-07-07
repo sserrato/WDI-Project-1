@@ -1,25 +1,22 @@
-// function testconnection() {
-// console.log("hello");
-// }
-//
-// console.log(testconnection());
+// BETTING MECHANISM
+var chips = 1000;
+var bet = 100;
 
+document.getElementById("betup").addEventListener("click", function(){
+  console.log(" betup event listener register");
+  if(bet < chips) {
+    bet += 100;
+    updateCashBet();
+  }
 
-// var randomRating = (Math.random())*10;
-//
-// function function_name(argument) {
-//   // body...
-// }
-//
-// function twoRandomScores(){
-//     var score1 = (Math.random())*10;
-//     var score2 = (Math.random())*10;
-//     return score1 + score2;
-//     }
-//
-// function twoRandomScores()
-// Math.floor(Math.random()*((52-1)+1));
-//
+});
+
+function updateCashBet() {
+console.log("updateCashbet register");
+document.getElementById("bet").innerText = "Bet = " + "$ " + bet;
+}
+
+// CARD DECK CREATION LOGIC
 
 function randomScorer() {
   console.log("I got the score " + Math.floor(Math.random()*((52-1)+1)));
