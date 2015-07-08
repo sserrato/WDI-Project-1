@@ -4,6 +4,8 @@
 var chips = 1000;
 var bet = 100;
 
+var cardfaces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
 
 // event listener to decrease the bet by $100
 
@@ -34,6 +36,22 @@ function updateCashBet() {
   document.getElementById("bet").innerText = "Bet = " + "$ " + bet;
   document.getElementById("chips").innerText = "Chips = " + "$ " + chips;
 }
+
+// this function ends the bet phase and will start the blackjack hand
+document.getElementById("dealhand").addEventListener("click", function(){
+  console.log("dealhand holla")
+  // change the display of the betting buttons to off, effectively creating a new mode to play Blackjack
+  document.getElementById("betdown").style.display = "none";
+  document.getElementById("betup").style.display = "none";
+  startGame();
+});
+
+// start the game
+
+function startGame() {
+console.log("the game is starting");
+}
+
 
 // CARD DECK CREATION LOGIC
 
