@@ -7,6 +7,56 @@ var bet = 100;
 var cardfaces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
 
+// create a card
+
+function card(name, cardface, suit, value) {
+  this.name = name;
+  this.cardface = cardface;
+  this.suit = suit;
+  this.value = value;
+}
+
+// the deck of cards
+var deck = [];
+
+// function for creating cards, added to the array deck
+
+function deckShuffle() {
+
+  deck = [];
+
+for (var i = 0; i < cardfaces.length; i++) {
+  for (var s =0; s < suits.length; s++) {
+    var carditem;
+    if (i > 9) {
+      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], 10);
+    } else {
+      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], i+1);
+    }
+    deck.push(carditem);
+}
+}
+}
+
+function deckShuffle() {
+
+  deck = [];
+
+for (var i = 0; i < cardfaces.length; i++) {
+  for (var s =0; s < suits.length; s++) {
+    var carditem;
+    if (i > 9) {
+      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], 10);
+    } else {
+      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], i+1);
+    }
+    deck.push(carditem);
+}
+}
+}
+
+deckShuffle(); 
+
 // event listener to decrease the bet by $100
 
 document.getElementById("betdown").addEventListener("click", function(){
