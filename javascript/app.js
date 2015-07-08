@@ -45,17 +45,17 @@ function deckShuffle() {
 for (var i = 0; i < cardfaces.length; i++) {
   for (var s =0; s < suits.length; s++) {
     var carditem;
-    if (i > 9) {
-      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], 10);
-    } else {
-      carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], i+1);
-    }
-    deck.push(carditem);
+      if (i > 9) {
+        carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], 10);
+      } else {
+        carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], i+1);
+      }
+      deck.push(carditem);
 }
 }
 }
 
-deckShuffle(); 
+deckShuffle(); //invoke the card creation and shuffling
 
 // event listener to decrease the bet by $100
 
@@ -93,6 +93,7 @@ document.getElementById("dealhand").addEventListener("click", function(){
   // change the display of the betting buttons to off, effectively creating a new mode to play Blackjack
   document.getElementById("betdown").style.display = "none";
   document.getElementById("betup").style.display = "none";
+  document.getElementById("playscreen").style.display = "inline";
   startGame();
 });
 

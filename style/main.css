@@ -1,8 +1,27 @@
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  display: block;  
+  display: block;
 }
+.button-secondary {
+  background: rgb(66, 184, 221); /* this is a light blue */
+}
+#switchplayerscreen {
+  display: none;
+}
+
+#playscreen {
+  display: none;
+}
+
+/*#cardhit {
+  display: none;
+}
+
+#cardstand {
+  display: none;
+}*/
+
 
 #chips{
 float: left;
