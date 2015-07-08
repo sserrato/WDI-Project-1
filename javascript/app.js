@@ -57,6 +57,19 @@ for (var i = 0; i < cardfaces.length; i++) {
 
 deckShuffle(); //invoke the card creation and shuffling
 
+// handCards function creates a hand for the players and deale
+
+function handCards() {
+  this.player = 'not-assigned';
+  this.cardsInHand = [];
+  this.value = 0;
+}
+
+this.player = 'none';
+this.cards = [];
+this.value = 0;
+}
+
 // event listener to decrease the bet by $100
 
 document.getElementById("betdown").addEventListener("click", function(){
