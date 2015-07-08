@@ -1,17 +1,39 @@
+#cardTable {
+  max-width: 100%;
+  background: green;
+  display: none;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
   display: block;
 }
+
 .button-secondary {
   background: rgb(66, 184, 221); /* this is a light blue */
 }
+
 #switchplayerscreen {
   display: none;
 }
 
 #playscreen {
   display: none;
+}
+
+.playerSpace {
+  background-color: white;
+  width: 500px;
+  display: inline;
+  margin: 30px;
+}
+
+.dealerSpace {
+  background-color: grey;
+  width: 500px;
+  display: inline;
+  margin: 10px;
 }
 
 /*#cardhit {

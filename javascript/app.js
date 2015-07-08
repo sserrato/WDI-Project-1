@@ -93,7 +93,8 @@ document.getElementById("dealhand").addEventListener("click", function(){
   // change the display of the betting buttons to off, effectively creating a new mode to play Blackjack
   document.getElementById("betdown").style.display = "none";
   document.getElementById("betup").style.display = "none";
-  document.getElementById("playscreen").style.display = "inline";
+  document.getElementById("playscreen").style.display = "block";
+  document.getElementById("cardTable").style.display = "block";
   startGame();
 });
 
