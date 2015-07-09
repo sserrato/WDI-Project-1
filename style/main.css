@@ -1,11 +1,20 @@
+#viewWinner {
+  display: none;
+  height: 30%;
+  background-color: yellow;
+}
+
+
 #cardTable {
-  max-width: 100%;
+  min-width: 40%;
+  min-height: 50%;
   background: green;
   display: none;
 }
 
 .container {
   max-width: 1000px;
+  height: 90%;
   margin: 0 auto;
   display: block;
 }
@@ -47,7 +56,6 @@
 
 #chips{
 float: left;
-width: 50%;
 text-align: right;
 margin: 5px;
 background: grey;
@@ -55,7 +63,7 @@ background: grey;
 
 #bet{
 float: right;
-width: 50%;
+
 text-align: left;
 margin: 5px;
 background: red;

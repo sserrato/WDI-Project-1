@@ -4,6 +4,8 @@
 var chips = 1000;
 var bet = 100;
 
+// deck of cards is based on the combination of cardfaces with suits. the below variables create the arrays to make cards.
+
 var cardfaces = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 var suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
 
@@ -16,7 +18,7 @@ function card(name, cardface, suit, value) {
   this.value = value;
 }
 
-// the deck of cards
+// the deck of cards is stored in this variable as an array
 var deck = [];
 
 // function for creating cards, added to the array deck
@@ -40,7 +42,7 @@ for (var i = 0; i < cardfaces.length; i++) {
 
 function deckShuffle() {
 
-  deck = [];
+  deck = [];//array to hold the deck
 
 for (var i = 0; i < cardfaces.length; i++) {
   for (var s =0; s < suits.length; s++) {
@@ -50,7 +52,7 @@ for (var i = 0; i < cardfaces.length; i++) {
       } else {
         carditem = new card(cardfaces[i] + 'of ' + suits[s], cardfaces[i], suits[s], i+1);
       }
-      deck.push(carditem);
+      deck.push(carditem); //this is where the carditem is then moved into the deck array
 }
 }
 }
@@ -59,15 +61,84 @@ deckShuffle(); //invoke the card creation and shuffling
 
 // handCards function creates a hand for the players and deale
 
-function handCards() {
+function handCards(){
   this.player = 'not-assigned';
   this.cardsInHand = [];
   this.value = 0;
+  console.log("function handCards is playing");
 }
 
-this.player = 'none';
-this.cards = [];
-this.value = 0;
+function dealGame() {
+  playerHand = new hand();
+  computerHand = new hand();
+  playerHand.player = "player";
+  dealerHand.player = "dealer";
+  startingHand(); // starting hand creates the initial hand
+  showValue();
+  if (playerHand.value == 21) {
+    winHand(); //win function is invoked because player has score of 21
+    if(deck.length < 10) {
+      shuffleDeck();
+    }
+  }
+}
+
+// starting hand function will deal out cards.
+
+function startingHand() {
+  for (var i = 0; i<2; i++){ //deals out 2 cards
+  hit(playerHand);
+  }
+  dealerHit()
+}
+
+function dealerHit(){
+  hit(computerHand);
+  showCompValue();
+}
+
+function showValue() {
+    document.getElementById("playerHandValuesUi").innerText = "Player hand is" + playerHand.value.toString();
+  // show playerHand.value.toString()
+  console.log(playerHand.value);
+  if (playerHand.value > 21) {
+    console.log("Player wins!");
+    showCompValue();
+    computerTurn();
+    // hide player buttons
+  }
+}
+
+function showCompValue() {
+  // show computerHand.value on dealer sdie
+  if(dealerHand.value > 21){
+    // dealer busts message
+  }
+}
+
+function addCards(addHand) {
+  var total = 0;
+  var list = []
+  for (var i = 0; i < addHand.cards.length; i++){
+    if(addHand.cards[i] != 'A') {
+      list.unshift(addHand.cards[i]);
+    }
+    else {
+      list.push(addHand.cards[i]);
+    }
+  }
+
+  for( var i = 0; i < list.length; i++) {
+    if (list += list[i].value;
+  }
+
+}
+
+// winHand function declared the winner
+function winHand(){
+  document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
+  chips+= bet;// add bet value to chips
+  updateCashBet();
 }
 
 // event listener to decrease the bet by $100
