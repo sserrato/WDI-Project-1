@@ -1,8 +1,19 @@
+
+// CARD DISPLAY MECHANISM - log card hand values to an array
+// var playCardArray = []
+//
+// for (var i = 0; i < playCardArray.length; i++) {
+//   playCardArray[i]
+// } look at Calculators to undrstand how to write mulitple items to a display
+
+
 // BETTING MECHANISM
+
 
 // var chips is the money to played. var bet is the min buy in and unit to increment the bet up.
 var chips = 1000;
 var bet = 100;
+var playerHandScore;
 
 var dealerHand;
 
@@ -226,12 +237,48 @@ function dealerTurn(){
   }
 }
 
+// checkscore
+function checkScore() {
+  if(playerHand.value < 22) {
+    if (playerHand.value > dealerHand.value) {
+      winHand();
+    }
+    else {
+      if(dealerHand.value < 22) {
+        if (dealerHand.value == playerHand.value) {
+          drawMatch();
+        }
+        else {
+          loseMatch();
+        }
+      }
+    }
+    if (dealerHand.value > 21) {
+      winHand();
+    }
+  }
+  else {
+    loseMatch();
+  }
+  if (chips > 0) {
+    console.log("you lose");
+  }
+  else {
+    console.log("game over");
+  }
+  if(deck.length < 10) {
+    shuffleDeck();
+  }
+}
+
 // winHand function declared the winner
 function winHand(){
   document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
   document.getElementById("viewWinner").innerText = "Player wins!";
   chips+= bet;// add bet value to chips
   updateCashBet();
+  document.getElementById("betdown").style.display = "block";
+  document.getElementById("betup").style.display = "block";
 }
 
 
@@ -287,18 +334,20 @@ function updateCashBet() {
   document.getElementById("betup").style.display = "none";
   document.getElementById("playscreen").style.display = "block";
   document.getElementById("cardTable").style.display = "block";
+  document.getElementById("viewWinner").style.display = "none";
   dealGame();
 });
 
 // start the game
 document.getElementById("cardstand").addEventListener("click", function(){
-hit(playerHand);
-showValue();
+  dealerHit();
+  dealerTurn();
+
 });
 
 document.getElementById("cardhit").addEventListener("click", function(){
-dealerHit();
-dealerTurn();
+  hit(playerHand);
+  showValue();
 });
 
 

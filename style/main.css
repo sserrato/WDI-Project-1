@@ -16,7 +16,7 @@
   max-width: 1000px;
   height: 90%;
   margin: 0 auto;
-  display: block;
+  display: inline-block;
 }
 
 .button-secondary {
@@ -68,6 +68,28 @@ text-align: left;
 margin: 5px;
 background: red;
 }
+
+.single-left {
+  background: #f7f7f7;
+  color: #373737;
+  /*float: left;
+  width: 6.5rem;
+  height: 10rem;*/
+  border: 2px solid #373737;
+  /*border-radius: .5rem;
+  margin-left: -4.5rem;
+  padding: .35rem;*/
+}
+
+.facevalue {
+  font-size: 1.35rem;
+}
+
+.first {
+  margin-left: 0;
+  margin-left: 0;
+}
+
 
 #lucreset{
 
