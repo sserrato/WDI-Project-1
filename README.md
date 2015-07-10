@@ -24,4 +24,5 @@ WDI-Project-1
 ### MVP
 ![](https://github.com/sserrato/WDI-Project-1/blob/master/Project1Game/MVP.png)
 
-### Test
+### GAME FLOW 
+![]()
