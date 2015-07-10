@@ -312,10 +312,10 @@ function drawMatch() {
   document.getElementById("viewWinner").innerText = "Draw";
   document.getElementById("betdown").style.display = "inline";
   document.getElementById("betup").style.display = "inline";
-document.getElementById("playscreen").style.display = "none";
-document.getElementById("cardhit").style.display = "none";
-document.getElementById("cardstand").style.display = "none";
-document.getElementById("cardTable").style.display = "none";
+  document.getElementById("playscreen").style.display = "none";
+  document.getElementById("cardhit").style.display = "none";
+  document.getElementById("cardstand").style.display = "none";
+  document.getElementById("cardTable").style.display = "none";
 }
 
 // lose function to declare the player has lost
@@ -389,35 +389,3 @@ document.getElementById("cardhit").addEventListener("click", function(){
   hit(playerHand);
   showValue();
 });
-
-
-// function startGame() {
-//   playerHand = new handCards();
-//   dealerHand = new handCards();
-//   playerHand =
-//
-// console.log("the game is starting");
-// }
-
-
-// CARD DECK CREATION LOGIC
-
-// pickRandomElement selects
-// function pickRandomElement(deck){
-//   var randomIndex = Math.floor(Math.random()*deck.length);
-//   return deck.splice(randomIndex, 1);
-// }
-//
-//
-// function randomScorer() {
-//   console.log("I got the score " + Math.floor(Math.random()*((52-1)+1)));
-// }
-//
-//
-// console.log("can i do this" + randomScorer() );
-//
-// var randomDeal = Math.floor(Math.random()*((52-1)+1));
-//
-// var deal = Math.floor(Math.random()*((52-1)+1));
-// var final = deal % 13;
-// console.log (final);
