@@ -1,5 +1,5 @@
 # WDI-Project-1
-WDI-Project-1
+
 #Blackjack 
 ## A Javascript card game
 
@@ -14,7 +14,9 @@ WDI-Project-1
 
 ![](https://github.com/sserrato/WDI-Project-1/blob/master/Project1Game/GameProject.png)
 ### User Stories
+
 ![](https://github.com/sserrato/WDI-Project-1/blob/master/Project1Game/Userstories.png)
+
 ### Problems to be solved
 * randomization of a deck of 52 cards
 * variable value of the Ace card to be 11 or 1 depending on the optimal outcome for the dealer or player 
@@ -24,5 +26,19 @@ WDI-Project-1
 ### MVP
 ![](https://github.com/sserrato/WDI-Project-1/blob/master/Project1Game/MVP.png)
 
-### GAME FLOW 
-![]()
+### Flow 
+![](https://github.com/sserrato/WDI-Project-1/blob/javascript_html_css_more/Project1Game/Flow-diagram.png)
+
+### Mocks
+![](https://github.com/sserrato/WDI-Project-1/blob/javascript_html_css_more/Project1Game/StartState.png)
+
+![](https://github.com/sserrato/WDI-Project-1/blob/javascript_html_css_more/Project1Game/PlayState-PlayerMoves.png)
+
+![](https://github.com/sserrato/WDI-Project-1/blob/javascript_html_css_more/Project1Game/PlayState-DealerMoves.png)
+
+![](https://github.com/sserrato/WDI-Project-1/blob/javascript_html_css_more/Project1Game/PlayState-PlayNext.png)
+
+### Backlog
+* Resolve player tracking bug
+* Refactor to use Jquery
+* Make responsive 
