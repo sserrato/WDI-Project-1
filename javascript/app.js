@@ -1,4 +1,3 @@
-
 // CARD DISPLAY MECHANISM - log card hand values to an array
 // var playCardArray = []
 //
@@ -6,6 +5,22 @@
 //   playCardArray[i]
 // } look at Calculators to undrstand how to write mulitple items to a display
 
+// Two player mechanism
+var gameCount = 11;
+var playerOneChips;
+var playerTwoChips;
+var whoPlays = "Player One";
+
+function movePlayer(){
+  if (gameCount % 2 === 1) {
+    whoPlays = "Player One";
+  }
+  else {
+    whoPlays = "Player Two";
+  }
+}
+
+movePlayer();
 
 // BETTING MECHANISM
 
@@ -13,7 +28,6 @@
 // var chips is the money to played. var bet is the min buy in and unit to increment the bet up.
 var chips = 1000;
 var bet = 100;
-var playerHandScore;
 
 var dealerHand;
 
@@ -108,13 +122,13 @@ function showValue() {
       document.getElementById("playerHandValuesUi").innerText = "Player busts";
     showCompValue();
     dealerTurn();
-    // hide player buttons
+    // none player buttons
   }
 }
 
 // show dealer hand value to users in the ui
 function showCompValue() {
-  // show dealerHand.value on dealer sdie
+  // show dealerHand.value on dealer side
     document.getElementById("dealerHandValuesUi").innerText = "Dealer hand is " + dealerHand.value.toString();
     console.log("showDealerValue in ShowCompValue is running");
   if(dealerHand.value > 21){
@@ -242,23 +256,28 @@ function checkScore() {
   if(playerHand.value < 22) {
     if (playerHand.value > dealerHand.value) {
       winHand();
+      gameCount-=1;
     }
     else {
       if(dealerHand.value < 22) {
         if (dealerHand.value == playerHand.value) {
           drawMatch();
+          gameCount-=1;
         }
         else {
           loseMatch();
+          gameCount-=1;
         }
       }
     }
     if (dealerHand.value > 21) {
       winHand();
+      gameCount-=1;
     }
   }
   else {
     loseMatch();
+    gameCount-=1;
   }
   if (chips > 0) {
     console.log("you lose");
@@ -277,8 +296,13 @@ function winHand(){
   document.getElementById("viewWinner").innerText = "Player wins!";
   chips+= bet;// add bet value to chips
   updateCashBet();
-  document.getElementById("betdown").style.display = "block";
-  document.getElementById("betup").style.display = "block";
+  document.getElementById("betdown").style.display = "inline";
+  document.getElementById("betup").style.display = "inline";
+  document.getElementById("playscreen").style.display = "none";
+  document.getElementById("cardhit").style.display = "none";
+  document.getElementById("cardstand").style.display = "none";
+  document.getElementById("cardTable").style.display = "none";
+
 }
 
 
@@ -286,12 +310,26 @@ function winHand(){
 function drawMatch() {
   document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
   document.getElementById("viewWinner").innerText = "Draw";
+  document.getElementById("betdown").style.display = "inline";
+  document.getElementById("betup").style.display = "inline";
+document.getElementById("playscreen").style.display = "none";
+document.getElementById("cardhit").style.display = "none";
+document.getElementById("cardstand").style.display = "none";
+document.getElementById("cardTable").style.display = "none";
 }
 
 // lose function to declare the player has lost
 function loseMatch() {
   document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
   document.getElementById("viewWinner").innerText = "House wins!";
+  document.getElementById("betdown").style.display = "inline";
+  document.getElementById("betup").style.display = "inline";
+  document.getElementById("playscreen").style.display = "none";
+  document.getElementById("cardhit").style.display = "none";
+  document.getElementById("cardstand").style.display = "none";
+  document.getElementById("cardTable").style.display = "none";
+
+
 }
 
 
@@ -332,8 +370,10 @@ function updateCashBet() {
   // change the display of the betting buttons to off, effectively creating a new mode to play Blackjack
   document.getElementById("betdown").style.display = "none";
   document.getElementById("betup").style.display = "none";
-  document.getElementById("playscreen").style.display = "block";
-  document.getElementById("cardTable").style.display = "block";
+  document.getElementById("playscreen").style.display = "inline";
+  document.getElementById("cardhit").style.display = "inline";
+  document.getElementById("cardstand").style.display = "inline";
+  document.getElementById("cardTable").style.display = "inline";
   document.getElementById("viewWinner").style.display = "none";
   dealGame();
 });

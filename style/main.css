@@ -1,22 +1,67 @@
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignright {
+  float: right;
+  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+  float: left;
+  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+
+body {
+  background-color: green;
+  margin: 0 auto;
+  display: block;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+
 #viewWinner {
   display: none;
   height: 30%;
   background-color: yellow;
 }
 
+#cardhit {
+  display: none
+}
+
+#cardstand {
+  display: none;
+}
+
 
 #cardTable {
-  min-width: 40%;
-  min-height: 50%;
   background: green;
   display: none;
 }
 
 .container {
-  max-width: 1000px;
-  height: 90%;
-  margin: 0 auto;
-  display: inline-block;
+  width: 90%
+
 }
 
 .button-secondary {
@@ -34,39 +79,28 @@
 .playerSpace {
   background-color: white;
   width: 500px;
-  display: inline;
-  margin: 30px;
+
+
+}
+
+.gameplay {
+  width: 960px;
 }
 
 .dealerSpace {
-  background-color: grey;
+  background-color: white;
   width: 500px;
-  display: inline;
-  margin: 10px;
+
 }
 
-/*#cardhit {
-  display: none;
-}
-
-#cardstand {
-  display: none;
-}*/
 
 
 #chips{
-float: left;
-text-align: right;
 margin: 5px;
-background: grey;
 }
 
 #bet{
-float: right;
-
-text-align: left;
 margin: 5px;
-background: red;
 }
 
 .single-left {
