@@ -90,7 +90,7 @@ function dealGame() {
     // clear board, switch to player 2
     // set the score for p1 vs p2
     if(deck.length < 10) {
-      deckShuffle(); 
+      deckShuffle();
     }
   }
 }
@@ -114,12 +114,12 @@ function dealerHit(){
 // display the card value to users in the UI
 
 function showValue() {
-    document.getElementById("playerHandValuesUi").innerText = "Player hand is " + playerHand.value.toString();
-  // show playerHand.value.toString()
-  console.log(playerHand.value);
-  if (playerHand.value > 21) {
+  document.getElementById("playerHandValuesUi").innerText = "Player hand is " + playerHand.value.toString();
+    // show playerHand.value.toString()
+    console.log(playerHand.value);
+    if (playerHand.value > 21) {
     console.log("Player loses!");
-      document.getElementById("playerHandValuesUi").innerText = "Player busts";
+    document.getElementById("playerHandValuesUi").innerText = "Player busts";
     showCompValue();
     dealerTurn();
     // none player buttons
@@ -132,14 +132,13 @@ function showCompValue() {
     document.getElementById("dealerHandValuesUi").innerText = "Dealer hand is " + dealerHand.value.toString();
     console.log("showDealerValue in ShowCompValue is running");
   if(dealerHand.value > 21){
-  document.getElementById("dealerHandValuesUi").innerText = "Dealer busts!";
+    document.getElementById("dealerHandValuesUi").innerText = "Dealer busts!";
     console.log("showDealerValue in ShowCompValue bust is running");
   }
 }
 
-// this function looks for Aces and sets the value to 1 or 11 depending on
+  // this function looks for Aces and sets the value to 1 or 11 depending on
 function addCards(addHand) {
-
   // add cards variables for total and an array with the list of cards
   var total = 0;
   var list = [];
@@ -286,7 +285,7 @@ function checkScore() {
     console.log("game over");
   }
   if(deck.length < 10) {
-    shuffleDeck();
+    deckShuffle();
   }
 }
 
