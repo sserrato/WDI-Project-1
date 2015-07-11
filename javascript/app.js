@@ -90,7 +90,7 @@ function dealGame() {
     // clear board, switch to player 2
     // set the score for p1 vs p2
     if(deck.length < 10) {
-      shuffleDeck();
+      deckShuffle(); 
     }
   }
 }
@@ -279,7 +279,7 @@ function checkScore() {
     loseMatch();
     gameCount-=1;
   }
-  if (chips > 0) {
+  if (chips < 0) {
     console.log("you lose");
   }
   else {
@@ -290,19 +290,23 @@ function checkScore() {
   }
 }
 
-// winHand function declared the winner
-function winHand(){
-  document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
-  document.getElementById("viewWinner").innerText = "Player wins!";
-  chips+= bet;// add bet value to chips
-  updateCashBet();
+// method to get bet screen back after win/loss/draw
+function displayBet() {
   document.getElementById("betdown").style.display = "inline";
   document.getElementById("betup").style.display = "inline";
   document.getElementById("playscreen").style.display = "none";
   document.getElementById("cardhit").style.display = "none";
   document.getElementById("cardstand").style.display = "none";
   document.getElementById("cardTable").style.display = "none";
+}
 
+// winHand function declared the winner
+function winHand(){
+  document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
+  document.getElementById("viewWinner").innerText = "Player wins!";
+  chips+= bet;// add bet value to chips
+  updateCashBet();
+  displayBet();
 }
 
 
@@ -310,24 +314,14 @@ function winHand(){
 function drawMatch() {
   document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
   document.getElementById("viewWinner").innerText = "Draw";
-  document.getElementById("betdown").style.display = "inline";
-  document.getElementById("betup").style.display = "inline";
-  document.getElementById("playscreen").style.display = "none";
-  document.getElementById("cardhit").style.display = "none";
-  document.getElementById("cardstand").style.display = "none";
-  document.getElementById("cardTable").style.display = "none";
+  displayBet();
 }
 
 // lose function to declare the player has lost
 function loseMatch() {
   document.getElementById("viewWinner").style.display = "block"; //set a winner statemement
   document.getElementById("viewWinner").innerText = "House wins!";
-  document.getElementById("betdown").style.display = "inline";
-  document.getElementById("betup").style.display = "inline";
-  document.getElementById("playscreen").style.display = "none";
-  document.getElementById("cardhit").style.display = "none";
-  document.getElementById("cardstand").style.display = "none";
-  document.getElementById("cardTable").style.display = "none";
+  displayBet();
 
 
 }
